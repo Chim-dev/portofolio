@@ -1,6 +1,8 @@
 <template>
     <header class="flex justify-between items-center p-6 bg-opacity-50 relative z-20">
-        <div class="text-white text-3xl font-bold">LOGO</div>
+        <div class="w-[70px] h-[70px] rounded-full overflow-hidden hover:scale-125 transition-all ease-in-out">
+            <img src="/src/assets/logo.png" alt="" width="90" height="100">
+        </div>
         <!-- Mobile Toggle Button -->
          <div class="md:hidden z-30 ">
          <button type="button" 
@@ -17,13 +19,13 @@
         </div>
          <!-- Navbar Link -->
          <nav
-         :class="['fixed inset-0 z-20 flex flex-col items-center justify-center bg-[#111827] md:relative md:bg-transparent md:flex md:justify-between md:flex-row',
+         :class="['fixed inset-0 z-20 flex flex-col items-center justify-center bg-[#1C1C1C] md:relative md:bg-transparent md:flex md:justify-between md:flex-row',
             isMenuOpen ? 'block':'hidden'
          ]"
          >
             <ul  class="flex flex-col items-center space-y-5 md:flex-row md:space-x-5 md:space-y-0">
                 <li v-for="item in Menu" :key="item.name">
-                    <a :href="item.href" class="block text-white transition hover:text-primary ease-linear text-2xl md:text-lg"
+                    <a :href="item.href" class="block text-white transition hover:text-secondary ease-linear text-2xl md:text-lg"
                     @click="scrollToSection(item.href)">{{ item.name }}</a>
                 </li>
             </ul>
@@ -35,10 +37,9 @@
 import { ref } from 'vue';
 const Menu = ref([
     {name:'Services', href:'#services'},
-    {name:'About me', href:'#about'},
     {name:'Skills', href:'#skills'},
     {name:'Projects', href:'#projects'},
-    {name:'Contacts', href:'#contacts'},
+    {name:'GitHub', href:'#github'},
 ]);
 const isMenuOpen = ref(false)
 const scrollToSection = (href) => {
