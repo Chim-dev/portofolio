@@ -1,11 +1,47 @@
 <script setup>
 // import components asynchronously
 import { defineAsyncComponent } from 'vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, } from 'vue';
 
 const Navbar = defineAsyncComponent(() => import('@/components/NavBar.vue'))
 const HeroSection = defineAsyncComponent(() => import('@/components/HeroSection.vue'))
+const unmuteIcon = "https://img.icons8.com/?size=100&id=2902&format=png&color=ffffff"; 
+const muteIcon   = "https://img.icons8.com/?size=100&id=644&format=png&color=ffffff"; 
+const audio = ref(null);
+const isMuted = ref(false);
 
+onMounted(() => {
+  audio.value = new Audio("/wuwa.mp3");
+  audio.value.loop = true;
+  audio.value.volume = 0.5;
+
+  // coba autoplay
+  audio.value.play().catch(() => {
+    console.warn("Autoplay diblokir browser, tunggu interaksi user...");
+  });
+
+  // fallback: play setelah klik pertama user
+  window.addEventListener(
+    "click",
+    () => {
+      if (audio.value.paused) {
+        audio.value.play();
+      }
+    },
+    { once: true }
+  );
+});
+
+function toggleAudio() {
+  if (!audio.value) return;
+  if (audio.value.paused) {
+    audio.value.play();
+    isMuted.value = false;
+  } else {
+    audio.value.pause();
+    isMuted.value = true;
+  }
+}
 // Stars animation state
 const starryStyle = ref('twinkling') // Options: 'twinkling', 'shooting', 'floating'
 
@@ -32,27 +68,33 @@ const switchStarStyle = (style) => {
 
 <template>
   <div class="relative bg-[#0a0a0a] min-h-screen overflow-hidden">
-    
     <!-- Style Switcher (Remove this in production) -->
     <div class="fixed top-4 right-4 z-50 flex gap-2">
       <button 
         @click="switchStarStyle('twinkling')"
-        :class="['px-3 py-1 text-xs rounded bg-white/20 text-white border transition hover:text-secondary ease-linear', starryStyle === 'twinkling' ? 'bg-white/40' : '']"
+        :class="['px-3 py-1 text-xs rounded text-white border transition hover:text-secondary ease-linear', starryStyle === 'twinkling' ? 'bg-white/40' : '']"
       >
         Twinkling
       </button>
       <button 
         @click="switchStarStyle('shooting')"
-        :class="['px-3 py-1 text-xs rounded bg-white/20 text-white border transition hover:text-secondary ease-linear', starryStyle === 'shooting' ? 'bg-white/40' : '']"
+        :class="['px-3 py-1 text-xs rounded text-white border transition hover:text-secondary ease-linear', starryStyle === 'shooting' ? 'bg-white/40' : '']"
       >
         Shooting
       </button>
       <button 
         @click="switchStarStyle('floating')"
-        :class="['px-3 py-1 text-xs rounded bg-white/20 text-white border transition hover:text-secondary ease-linear', starryStyle === 'floating' ? 'bg-white/40' : '']"
+        :class="['px-3 py-1 text-xs rounded  text-white border transition hover:text-secondary ease-linear', starryStyle === 'floating' ? 'bg-white/40' : '']"
       >
         Floating
       </button>
+       <span @click="toggleAudio" class="cursor-pointer">
+        <img 
+          :src="isMuted ? muteIcon : unmuteIcon" 
+          alt="audio-control" 
+          class="w-8 h-8"
+        />
+      </span>
     </div>
 
     <!-- Background Stars Layer -->

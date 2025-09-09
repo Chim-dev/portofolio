@@ -1,51 +1,3 @@
-<!-- <template>
-    <section class="relative w-full" data-aos="zoom-in-up">
-        <div class="absolute top-0 inset-x-0 h-64 flex items-start">
-            <div class="h-24 w-2/3 bg-gradient-to-br from-[#F5F5F5] blur-2xl invisible opacity-40"></div>
-            <div class="h-20 w-3/5 bg-gradient-to-r from-[#a3a1a5] opacity-40 blur-2xl"></div>
-        </div>
-        <div class="w-full px-5 sm:px-8 md:px-12 lg:px-8 max-w-screen-lg lg:max-w-screen-xl mx-auto relative">
-            <div
-                class="grid lg:grid-cols-2 gap-10 xl:gap-14 relative pt-14 lg:max-w-none max-w-2xl md:max-w-3xl mx-auto">
-                <div class="lg:py-6">
-                    <div class="text-center lg:text-left ">
-                        <h1 class="pt-4 text-black font-bold text-4xl md:text-5xl lg:text-6xl">
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-gray-700">ChocoChim</span>
-                        </h1>
-                    </div>
-                </div>
-                <p class="text-gray-300 pt-8 text-center lg:text-left mx-auto max-w-xl ">
-                    Hi! I'm Chim — I'm an undergraduate <span
-                        class="text-transparent bg-clip-text bg-gradient-to-l from-gray-500 to-blue-500">
-                        Computer Science
-                    </span> student from <a
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-300"
-                        href="https://itk.ac.id/" target="_blank"> Institut Teknologi Kalimantan</a>
-                    ,I'm an aspiring Full-Stack Software Engineer with a passion for building scalable and user-friendly
-                    applications.
-                    This website showcases my project documentation — from early experiments to more polished works —
-                    reflecting my growth and learning journey.
-                </p>
-            </div>
-            <div class="lg:h-full md:flex">
-                <div class="flex w-full h-96 min-h-[24rem] lg:min-h-[none] lg:w-full lg:h-full items-center relative">
-                    <div
-                        class="absolute z-0 top-1/2 -translate-y-1/2 w-5/6 right-0 h-[calc(80%+20px)] bg-gradient-to-tr from-[#868585] to-[#2E2E2E] blur-2xl rounded-full">
-                    </div>
-                    <div
-                        class="absolute h-full z-10 p-2 -translate-y-1/2 top-1/2 lg:right-3 md:right-40 sm:right-16 rounded-full shadow-lg border-primary">
-                        <transition name="morph" mode="out-in">
-                            <img :key="currentImage" :src="currentImage" alt="carte" loading="lazy" width="500"
-                                height="auto" class="w-full h-full rounded-full object-cover" />
-                        </transition>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</template> -->
-
 <template>
   <section class="relative w-full" data-aos="zoom-in-up">
     <!-- background gradient atas -->
@@ -143,6 +95,8 @@ const images = [
   "/src/assets/download.png",
   "/src/assets/carte1 (1).png",
   "/src/assets/carte1 (2).png",
+  "/src/assets/carte aset (1).png",
+  "/src/assets/carte aset (2).png",
 ];
 
 const index = ref(0);
