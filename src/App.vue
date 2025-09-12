@@ -69,7 +69,7 @@ const switchStarStyle = (style) => {
 <template>
   <div class="relative bg-[#0a0a0a] min-h-screen overflow-hidden">
     <!-- Style Switcher (Remove this in production) -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
+    <div class="absolute top-2 right-2 flex flex-row py-1 justify-end z-50 gap-2">
       <button 
         @click="switchStarStyle('twinkling')"
         :class="['px-3 py-1 text-xs rounded text-white border transition hover:text-secondary ease-linear', starryStyle === 'twinkling' ? 'bg-white/40' : '']"

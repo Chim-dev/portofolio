@@ -31,7 +31,7 @@
               Institut Teknologi Kalimantan
             </a>,
             I'm an aspiring Full-Stack Software Engineer with a passion for building scalable and user-friendly
-            applications. This website showcases my project documentation — from early experiments to more polished works —
+            applications. This website showcases my project documentation, from early experiments to more polished works,
             reflecting my growth and learning journey.
             <br>
             I love <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-100 to-orange-200">Cuteness</span>, especially from game characters as you may notice from this Website's theme.
