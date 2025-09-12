@@ -5,6 +5,8 @@ import { ref, onMounted, } from 'vue';
 
 const Navbar = defineAsyncComponent(() => import('@/components/NavBar.vue'))
 const HeroSection = defineAsyncComponent(() => import('@/components/HeroSection.vue'))
+const AboutSection = defineAsyncComponent(() => import('@/components/AboutSection.vue'))
+const FooterWeb = defineAsyncComponent(() => import('@/components/FooterWeb.vue'))
 const unmuteIcon = "https://img.icons8.com/?size=100&id=2902&format=png&color=ffffff"; 
 const muteIcon   = "https://img.icons8.com/?size=100&id=644&format=png&color=ffffff"; 
 const audio = ref(null);
@@ -206,6 +208,8 @@ const switchStarStyle = (style) => {
     <div class="relative z-10">
       <Navbar/>
       <HeroSection/>
+      <AboutSection/>
+      <FooterWeb/>
     </div>
   </div>
 </template>

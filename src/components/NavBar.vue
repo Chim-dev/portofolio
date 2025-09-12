@@ -28,7 +28,8 @@
                     <a 
                         :href="item.href" 
                         class="flex items-center gap-2 text-white transition hover:text-secondary ease-linear text-2xl md:text-lg"
-                        @click="scrollToSection(item.href)"
+                        @click="scrollToSection(item.href)" :target="item.href.startsWith('http') ? '_blank' : null"
+                         :rel="item.href.startsWith('http') ? 'noopener noreferrer' : null"
                     >
                         <!-- Display SVG icon if item has one -->
                         <span v-if="item.icon" v-html="item.icon" class="w-6 h-6 md:w-5 md:h-5"></span>
@@ -58,7 +59,7 @@ const Menu = ref([
     {name:'Services', href:'#services'},
     {name:'Skills', href:'#skills'},
     {name:'Projects', href:'#projects'},
-    {name:'', href:'#github', icon: githubIcon}, // Added icon property
+    {name:'', href:'https://github.com/Chim-dev', icon: githubIcon}, // Added icon property
 ]);
 
 const isMenuOpen = ref(false)
