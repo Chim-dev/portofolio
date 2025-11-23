@@ -15,7 +15,7 @@ const isMuted = ref(false);
 onMounted(() => {
   audio.value = new Audio("/wuwa.mp3");
   audio.value.loop = true;
-  audio.value.volume = 0.5;
+  audio.value.volume = 1;
 
   // coba autoplay
   audio.value.play().catch(() => {

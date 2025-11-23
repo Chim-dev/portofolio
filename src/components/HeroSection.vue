@@ -19,7 +19,7 @@
               </span>
             </h1>
           </div>
-          <p class="text-gray-300 pt-8 text-center lg:text-left mx-auto max-w-xl text-6md">
+          <p class="text-gray-300 pt-8 text-center text-xl lg:text-left mx-auto max-w-xl text-6md">
             Hi! I'm Chim — I'm an undergraduate 
             <span class="text-transparent bg-clip-text bg-gradient-to-l from-gray-500 to-blue-500">
               Computer Science
@@ -80,7 +80,6 @@ const images = [
 
 const index = ref(0);
 const currentImage = ref(images[index.value]);
-const currentYear = computed(() => new Date().getFullYear());
 let intervalId = null;
 
 onMounted(() => {
