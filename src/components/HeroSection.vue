@@ -1,16 +1,16 @@
 <template>
   <section class="relative w-full" data-aos="zoom-in-up">
-    <!-- background gradient atas -->
+    
     <div class="absolute top-0 inset-x-0 h-64 flex items-start">
       <div class="h-24 w-2/3 bg-gradient-to-br from-[#F5F5F5] blur-2xl invisible opacity-40"></div>
       <div class="h-20 w-3/5 bg-gradient-to-r from-[#fad6b8] opacity-40 blur-2xl"></div>
     </div>
 
     <div class="w-full px-5 sm:px-8 md:px-12 lg:px-8 max-w-screen-lg lg:max-w-screen-xl mx-auto relative">
-      <!-- grid 2 kolom -->
+      
       <div class="grid lg:grid-cols-2 gap-10 xl:gap-14 relative pt-14 lg:max-w-none max-w-2xl md:max-w-3xl mx-auto">
         
-        <!-- Kolom kiri: teks -->
+      
         <div class="lg:py-6 flex flex-col justify-center">
           <div class="text-center lg:text-left">
             <h1 class="pt-4 text-black font-bold text-4xl md:text-5xl lg:text-6xl">
@@ -38,12 +38,12 @@
           </p>
         </div>
 
-        <!-- Kolom kanan: gambar -->
+        
         <div class="flex justify-center items-center relative">
-          <!-- background glow -->
+        
           <div class="absolute z-0 w-[80%] h-[80%] bg-gradient-to-tr from-[#868585] to-[#2E2E2E] blur-2xl rounded-full"></div>
           
-          <!-- gambar -->
+        
           <div class="relative z-10 p-2 rounded-full shadow-lg border border-primary bg-white">
             <transition name="crossfade" mode="out-in">
               <img
@@ -69,13 +69,12 @@ Aos.init();
 
 import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 
-// Daftar gambar (isi dengan file lokal / url sesuai kebutuhan)
 const images = [
   "/src/assets/download.png",
-  "/src/assets/carte1 (1).png",
-  "/src/assets/carte1 (2).png",
-  "/src/assets/carte aset (1).png",
-  "/src/assets/carte aset (2).png",
+  "/src/assets/carte1(1).png",
+  "/src/assets/carte1(2).png",
+  "/src/assets/carteaset(1).png",
+  "/src/assets/carteaset(2).png",
 ];
 
 const index = ref(0);
